@@ -37,4 +37,5 @@ spec:
   ports:
   - port: 50051
     targetPort: 50051
+    nodePort: 30080
   type: NodePort
