@@ -5,7 +5,7 @@ cluster:
 deploy:
 	kubectl apply -f greeter.yaml
 
-reflection:
+list:
 	grpcurl -plaintext localhost:8082 list
 
 hello:
