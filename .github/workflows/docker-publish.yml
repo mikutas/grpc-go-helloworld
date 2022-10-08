@@ -14,7 +14,7 @@ on:
   pull_request:
 
 env:
-  IMAGE_NAME: greeter_server
+  IMAGE_NAME: greeter-server
 
 jobs:
   # Run tests.
