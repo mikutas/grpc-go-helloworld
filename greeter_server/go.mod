@@ -1,4 +1,4 @@
-module github.com/tkms0106/grpc-go-helloworld/greeter_server
+module github.com/mikutas/grpc-go-helloworld/greeter_server
 
 go 1.18
 
