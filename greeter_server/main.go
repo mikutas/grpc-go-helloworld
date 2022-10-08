@@ -42,7 +42,7 @@ type server struct {
 // SayHello implements helloworld.GreeterServer
 func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
 	log.Printf("Received: %v", in.GetName())
-	return &pb.HelloReply{Message: "Hello " + in.GetName() + " " + os.Getenv("MY_POD_NAME")}, nil
+	return &pb.HelloReply{Message: "Hello " + in.GetName() + ", I'm " + os.Getenv("MY_POD_NAME")}, nil
 }
 
 func main() {
