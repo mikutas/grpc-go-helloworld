@@ -9,8 +9,9 @@ jobs:
       - checkout
       - aqua/install-aqua:
           version: v1.20.2
-      - aqua/aqua-install:
-          aqua_root_dir: ~/.local/share/aquaproj-aqua
+      - run:
+          command: |
+            echo 'export PATH=~/.local/share/aquaproj-aqua/bin:"$PATH"' >> "$BASH_ENV"
       - run:
           command: |
             cd greeter_server
