@@ -20,6 +20,11 @@ jobs:
             export PATH=$HOME/.aqua/bin:$PATH
       - run:
           command: |
+            which go
+            which grpcurl
+            echo $PATH
+      - run:
+          command: |
             cd greeter_server
             go run main.go
           background: true
