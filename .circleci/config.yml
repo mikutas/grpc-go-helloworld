@@ -10,7 +10,7 @@ jobs:
       - aqua/install-aqua:
           version: v1.20.2
       - aqua/aqua-install:
-          aqua_root_dir: /root/.aqua
+          aqua_root_dir: ~/.local/share/aquaproj-aqua
       - run:
           command: |
             which go
