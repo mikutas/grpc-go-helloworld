@@ -13,11 +13,6 @@ jobs:
           aqua_root_dir: ~/.local/share/aquaproj-aqua
       - run:
           command: |
-            which go
-            which grpcurl
-            echo $PATH
-      - run:
-          command: |
             cd greeter_server
             go run main.go
           background: true
