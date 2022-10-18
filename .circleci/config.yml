@@ -10,16 +10,18 @@ jobs:
       - aqua/install-aqua:
           version: v1.20.2
       - run:
-          command: |
-            echo 'export PATH=~/.local/share/aquaproj-aqua/bin:"$PATH"' >> "$BASH_ENV"
+          command: aqua i
       - run:
           command: |
             cd greeter_server
-            go run main.go
+            aqua exec go build main.go
+      - run:
+          command: |
+            greeter_server/main
           background: true
       - run:
           command: |
-            grpcurl -plaintext localhost:50051 list
+            aqua exec grpcurl -plaintext localhost:50051 list
 workflows:
   build:
     jobs:
