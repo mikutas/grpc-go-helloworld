@@ -1,7 +1,19 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
-    "github>aquaproj/aqua-renovate-config#1.2.6"
+    "github>aquaproj/aqua-renovate-config#1.2.6",
+    "github>aquaproj/aqua-renovate-config:installer-script#1.2.6(.circleci/config\\.yml)"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": [
+        ".circleci/config.yml"
+      ],
+      "matchStrings": [
+        "aqua-installer \\| bash -s -- -v (?<currentValue>.*)\n"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "aquaproj/aqua"
+    }
   ]
 }
