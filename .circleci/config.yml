@@ -1,27 +1,26 @@
 version: 2.1
-orbs:
-  aqua: aquaproj/aqua@0.2.1
 jobs:
   test:
     docker:
-      - image: cimg/base:current
+      - image: golang:1.19.2
     steps:
       - checkout
-      - aqua/install-aqua:
-          version: v1.20.2
       - run:
-          command: aqua i
+          command: |
+            curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.1.2/aqua-installer | bash -s -- -v v1.21.0
+      - run:
+          command: aqua install --only-link
       - run:
           command: |
             cd greeter_server
-            aqua exec go build main.go
+            go build main.go
       - run:
           command: |
             greeter_server/main
           background: true
       - run:
           command: |
-            aqua exec grpcurl -plaintext localhost:50051 list
+            grpcurl -plaintext localhost:50051 list
 workflows:
   build:
     jobs:
