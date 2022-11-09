@@ -8,6 +8,7 @@ jobs:
       - run:
           command: |
             curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v1.1.2/aqua-installer | bash -s -- -v v1.21.0
+            echo 'export PATH="$HOME/.local/share/aquaproj-aqua/bin:"$PATH"' >> "$BASH_ENV"
       - run:
           command: aqua install --only-link
       - run:
