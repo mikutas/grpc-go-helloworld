@@ -3,8 +3,7 @@
   "extends": [
     ":timezone(Asia/Tokyo)",
     "github>aquaproj/aqua-renovate-config#1.2.6",
-    "github>aquaproj/aqua-renovate-config:installer-script#1.2.6(.circleci/config\\.yml)",
-    "github>mikutas/dotfiles:installer-script(\\.circleci/config\\.yml)"
+    "github>aquaproj/aqua-renovate-config:installer-script#1.3.0(.circleci/config\\.yml)"
   ],
   "packageRules": [
     {
