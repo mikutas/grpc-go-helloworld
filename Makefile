@@ -6,10 +6,10 @@ clean:
 	k3d cluster delete mycluster
 
 deploy:
-	kubectl apply -f greeter.yaml
+	kubectl apply -f manifest/greeter.yaml
 
 undeploy:
-	kubectl delete -f greeter.yaml
+	kubectl delete -f manifest/greeter.yaml
 
 list:
 	grpcurl -plaintext localhost:8082 list
