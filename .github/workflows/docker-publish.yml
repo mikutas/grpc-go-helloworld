@@ -16,7 +16,7 @@ env:
 jobs:
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
-  push:
+  publish:
     # Ensure test job passes before pushing image.
     # needs: test
 
