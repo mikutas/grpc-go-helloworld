@@ -13,11 +13,10 @@ jobs:
           command: aqua install --only-link
       - run:
           command: |
-            cd greeter_server
             go build main.go
       - run:
           command: |
-            greeter_server/main
+            ./main
           background: true
       - run:
           command: |
