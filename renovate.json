@@ -1,18 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    ":prConcurrentLimitNone",
-    ":prHourlyLimitNone",
-    ":timezone(Asia/Tokyo)",
     "github>aquaproj/aqua-renovate-config#1.10.0",
-    "github>aquaproj/aqua-renovate-config:installer-script#1.10.0(.circleci/config\\.yml)"
-  ],
-  "packageRules": [
-    {
-      "matchPackagePatterns": ["aquaproj"],
-      "automerge": true,
-      "extends": ["schedule:weekends"]
-    }
-  ],
-  "platformAutomerge": true
+    "github>aquaproj/aqua-renovate-config:installer-script#1.10.0(.circleci/config\\.yml)",
+    "github>mikutas/my-renovate-config"
+  ]
 }
