@@ -3,7 +3,7 @@ module github.com/mikutas/grpc-go-helloworld/greeter_server
 go 1.19
 
 require (
-	google.golang.org/grpc v1.58.2
+	google.golang.org/grpc v1.58.3
 	google.golang.org/grpc/examples v0.0.0-20210129004707-0bc741730b81
 )
 
