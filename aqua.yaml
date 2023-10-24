@@ -9,4 +9,4 @@ registries:
 - type: standard
   ref: v4.77.0 # renovate: depName=aquaproj/aqua-registry
 packages:
-- name: fullstorydev/grpcurl@v1.8.8
+- name: fullstorydev/grpcurl@v1.8.9
