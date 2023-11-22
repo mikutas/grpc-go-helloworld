@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: greeter-server
-        image: ghcr.io/mikutas/greeter-server:v1.58.3
+        image: ghcr.io/mikutas/greeter-server:v1.59.0
         resources:
           limits:
             memory: "64Mi"
