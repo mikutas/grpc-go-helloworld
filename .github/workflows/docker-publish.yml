@@ -34,7 +34,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Ser the version
-        run: echo "VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')" >> $GITHUB_ENV
+        run: echo "VERSION=$(echo "${{ github.ref_name }}")" >> $GITHUB_ENV
 
       - name: Build and push
         uses: docker/build-push-action@v6
