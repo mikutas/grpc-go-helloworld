@@ -1,6 +1,9 @@
 name: Docker
 
 on:
+  pull_request:
+    types:
+      - labeled
   push:
     # Publish `main` as Docker `latest` image.
     # branches:
@@ -17,12 +20,7 @@ jobs:
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
   publish:
-    # Ensure test job passes before pushing image.
-    # needs: test
-
     runs-on: ubuntu-latest
-    if: github.event_name == 'push'
-
     steps:
       - uses: actions/checkout@v4
 
@@ -33,7 +31,12 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Ser the version
+      - name: Set the version
+        if: github.event_name == 'pull_request' && github.event.label.name == 'preview'
+        run: echo "VERSION=$(echo "${{ github.sha }}")" >> $GITHUB_ENV
+
+      - name: Set the version
+        if: github.event_name == 'push'
         run: echo "VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')" >> $GITHUB_ENV
 
       - name: Build and push
