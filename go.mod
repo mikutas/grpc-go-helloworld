@@ -2,7 +2,7 @@ module github.com/mikutas/grpc-go-helloworld/greeter_server
 
 go 1.22.7
 
-toolchain go1.23.4
+toolchain go1.26.0
 
 require (
 	google.golang.org/grpc v1.68.0
