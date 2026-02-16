@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: golang:1.25.0
+      - image: golang:1.26.0
     steps:
       - checkout
       - run:

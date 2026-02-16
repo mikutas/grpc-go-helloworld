@@ -1,4 +1,4 @@
-FROM golang:1.25.0 as builder
+FROM golang:1.26.0 as builder
 ARG VERSION
 COPY ./ /go/src/github.com/mikutas/grpc-go-helloworld/
 RUN cd /go/src/github.com/mikutas/grpc-go-helloworld/ \
