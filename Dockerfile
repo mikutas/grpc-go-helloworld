@@ -4,6 +4,6 @@ COPY ./ /go/src/github.com/mikutas/grpc-go-helloworld/
 RUN cd /go/src/github.com/mikutas/grpc-go-helloworld/ \
  && CGO_ENABLED=0 go build
 
-FROM gcr.io/distroless/base-debian12
+FROM gcr.io/distroless/base-debian13
 COPY --from=builder /go/src/github.com/mikutas/grpc-go-helloworld/ /bin
 ENTRYPOINT [ "greeter_server" ]
